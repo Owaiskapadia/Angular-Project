@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="container">
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, exercitationem quos? Dolores explicabo at aliquam veniam sequi nobis, ipsum voluptatibus adipisci commodi excepturi amet doloremque fugiat quidem aspernatur placeat saepe quia cumque cupiditate atque. Dignissimos pariatur similique, id dolore unde necessitatibus saepe aliquam commodi, laboriosam tempora ex corporis excepturi voluptatum eaque nihil eligendi provident rem dolorem nostrum aperiam incidunt voluptas illo sequi! Illum illo eius incidunt nobis delectus harum id consectetur iure cum, dolorum obcaecati vel recusandae expedita explicabo? Ex explicabo saepe error, doloremque tempore molestiae unde quae vitae quam suscipit nihil eveniet voluptatum perspiciatis sit officiis mollitia cumque quis?</p>
+    <app-game-component (display)="newComp($event)"></app-game-component>
+    <app-odd-component [element]="elements" *ngFor="let elements of OddNumbers"></app-odd-component>
+    <app-even-component [element]="elements" *ngFor="let elements of EvenNumbers"></app-even-component>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
