@@ -1,10 +1,33 @@
-<div class="row">
-  <div class="container">
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, exercitationem quos? Dolores explicabo at aliquam veniam sequi nobis, ipsum voluptatibus adipisci commodi excepturi amet doloremque fugiat quidem aspernatur placeat saepe quia cumque cupiditate atque. Dignissimos pariatur similique, id dolore unde necessitatibus saepe aliquam commodi, laboriosam tempora ex corporis excepturi voluptatum eaque nihil eligendi provident rem dolorem nostrum aperiam incidunt voluptas illo sequi! Illum illo eius incidunt nobis delectus harum id consectetur iure cum, dolorum obcaecati vel recusandae expedita explicabo? Ex explicabo saepe error, doloremque tempore molestiae unde quae vitae quam suscipit nihil eveniet voluptatum perspiciatis sit officiis mollitia cumque quis?</p>
-    <app-game-component (display)="newComp($event)"></app-game-component>
-    <app-odd-component [element]="elements" *ngFor="let elements of OddNumbers"></app-odd-component>
-    <app-even-component [element]="elements" *ngFor="let elements of EvenNumbers"></app-even-component>
+<particles [style]="style" [width]="width" [height]="height" [params]="params"></particles>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+      <br><br>
+      <ul class="list-group">
+        <div *ngIf="onlyOdd">
+         <li
+            class="list-group-item" *ngFor="let odd of oddNumber"
+            [ngClass]="{odd: odd%2 !==0}"
+            [ngStyle]="{backgroundColor: odd%2 !== 0? 'aqua': 'transparent'}">
+            {{odd}}  
+          </li>
+        </div>
+        <div *ngIf="!onlyOdd">
+         <li
+            class="list-group-item" *ngFor="let even of evenNumber"
+            [ngClass]="{odd: even%2 !==0}"
+            [ngStyle]="{backgroundColor: even%2 !== 0? 'aqua': 'transparent'}">
+            {{even}}  
+          </li>
+        </div>
+      </ul>
+      <ng-template [ngIf]="onlyOdd">
+        <p >{{oddnumber}}</p>
+      </ng-template>
+    </div>
   </div>
 </div>
-
-<router-outlet></router-outlet>
